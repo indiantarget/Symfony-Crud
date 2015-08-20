@@ -1,0 +1,56 @@
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/User.css') }}" />
+{% endblock %}
+
+{% block body -%}
+    <h1 align = "center" color:blue >User </h1>
+
+    <table class="record_properties" border='1' style='width:100%'>
+        <tbody align = "center" >
+            <tr >
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ entity.age }}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{ entity.gender }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ entity.address }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('user') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('user_edit', { 'id': entity.id }) }}">
+        <button type = "submit" >
+            EDIT
+            </button>
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('user_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">DELETE</button>
+        </form>
+    </li>
+</ul>
+
+
+{% endblock %}

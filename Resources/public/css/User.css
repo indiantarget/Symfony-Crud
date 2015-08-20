@@ -1,0 +1,16 @@
+body {background-color:lightgray}
+h1{
+color:blue;
+background-color: #6495ed;}
+form   {color:red}
+tbody {color: brown}
+
+tr{
+    font-style: oblique;
+}
+a {
+    color : green;
+}
+button {
+    color: purple;
+}

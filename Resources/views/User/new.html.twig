@@ -1,0 +1,23 @@
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/User.css') }}" />
+{% endblock %}
+
+{% block body -%}
+    <h1 align =" center">User creation</h1>
+
+    <form align = " center " action="{{ path('user_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">CREATE</button>
+        </p>
+    </form>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('user') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+Acme\UserBundle\Entity\User:
+    type: entity
+    table: User
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: '255'
+        age:
+            type: string
+            length: '255'
+        gender:
+            type: string
+            length: '255'
+        address:
+            type: string
+            length: '255'
+    lifecycleCallbacks: {  }
